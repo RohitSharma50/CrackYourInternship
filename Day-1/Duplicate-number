@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int n=nums.size(); 
+        set<int>s;
+        for(int i=0;i<n;i++) 
+        {
+            s.insert(nums[i]); 
+        }   
+         set<int, greater<int> >::iterator itr;
+    int i=0;
+    for (itr = s.begin(); itr != s.end(); itr++) {
+         nums[i]=*itr ;
+        i++;
+    }
+        // for(int i=0;i<n;i++) 
+        // {   if(i<s.size())
+        //      nums[i]=s[i]; 
+        //    else 
+        //        nums[i]='_';
+        // }
+         return s.size();
+    }
+};

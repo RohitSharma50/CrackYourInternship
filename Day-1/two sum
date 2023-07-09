@@ -1,0 +1,20 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {  
+          unordered_map<int,int> hmap;
+        
+        for(int i=0; i<nums.size(); ++i){
+            int curr = nums[i];
+            int newTarget = target - curr;
+            if(hmap.find(newTarget) != hmap.end()){
+                return {hmap[newTarget], i};
+            }else{
+                hmap.insert(make_pair(curr, i));
+            }
+            
+        }
+        return {-1, -1};
+    }
+
+    
+};
